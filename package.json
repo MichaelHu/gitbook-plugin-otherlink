@@ -1,0 +1,14 @@
+{
+    "name": "gitbook-plugin-otherlink",
+    "description": "A gitbook plugin to link to non-md files under sub-directories in GitBook",
+    "main": "index.js",
+    "version": "0.1.0",
+    "engines": {
+        "gitbook": ">=3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MichaelHu/gitbook-plugin-otherlink.git"
+    },
+    "license": "MIT"
+}
