@@ -1,14 +1,31 @@
 {
-    "name": "gitbook-plugin-otherlink",
-    "description": "A gitbook plugin to link to non-md files under sub-directories in GitBook",
-    "main": "index.js",
-    "version": "0.1.0",
-    "engines": {
-        "gitbook": ">=3.0.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/MichaelHu/gitbook-plugin-otherlink.git"
-    },
-    "license": "MIT"
+  "name": "gitbook-plugin-otherlink",
+  "description": "A gitbook plugin to link to non-md files under sub-directories in GitBook",
+  "main": "index.js",
+  "version": "0.2.0",
+  "engines": {
+    "gitbook": ">=3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelHu/gitbook-plugin-otherlink.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichaelHu/gitbook-plugin-otherlink/issues"
+  },
+  "homepage": "https://github.com/MichaelHu/gitbook-plugin-otherlink#readme",
+  "dependencies": {
+    "uglify-js": "^2.7.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "prepublish": "./node_modules/.bin/uglifyjs src/otherlink.js -o assets/js/otherlink.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gitbook",
+    "plugin"
+  ],
+  "author": "MichaelHu"
 }
