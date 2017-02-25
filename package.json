@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-otherlink",
   "description": "A gitbook plugin to link to non-md files under sub-directories in GitBook",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "gitbook": ">=3.0.0"
   },

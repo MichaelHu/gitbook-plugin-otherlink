@@ -1,15 +1,9 @@
 require( [ 'gitbook', 'jquery' ], function( gitbook, $ ) {
 
     function fixSummaryLinks() {
-        fixLinks( $( '.book-summary nav li a' ) );
-    }
-
-    function fixPageLinks() {
-        fixLinks( $( '.book-body a' ) );
-    }
-
-    function fixLinks( $links ) {
+        var $links = $( '.book-summary nav li a' );
         var bookRoot = gitbook.state.bookRoot;
+
         if ( !/\/$/.test( bookRoot ) ) {
             bookRoot += '/';
         } 
@@ -18,7 +12,21 @@ require( [ 'gitbook', 'jquery' ], function( gitbook, $ ) {
             if ( /^ref:\/\//.test( href ) ) {
                 $link.attr( 
                     'href'
+                    // All relative links in summary.md is also relative to bookRoot
                     , bookRoot + href.replace( /^ref:\/\//, '' ) 
+                );
+            }
+        } );
+    }
+
+    function fixPageLinks() {
+        var $links = $( '.book-body a' );
+        $links.each( function( index, link ) {
+            var $link = $( link ), href = $link.attr( 'href' );
+            if ( /^ref:\/\//.test( href ) ) {
+                $link.attr( 
+                    'href'
+                    , href.replace( /^ref:\/\//, '' ) 
                 );
             }
         } );
